@@ -6,11 +6,9 @@ var check = palindroma(inserireParola);
 
 function palindroma(inserireParola) {
     var parolaAlContrario = '';
-    for (var i = inserireParola.lenght-1; i >= 0; i--) {
-        parolaAlContrario = inserireParola[i];
-        console.log(inserireParola[i]);
+    for (var i = inserireParola.length-1; i >= 0; i--) {
+        parolaAlContrario += inserireParola[i];
     }
-    console.log(parolaAlContrario);
     return parolaAlContrario;
 }
 
@@ -19,3 +17,4 @@ if (inserireParola == check) {
 } else {
     console.log('la parola non è palindroma');
 }
+// ------------------ Esercizio 2 ----------------
