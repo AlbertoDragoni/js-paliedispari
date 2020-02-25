@@ -19,34 +19,30 @@
 // }
 // ------------------ Esercizio 2 ----------------
 
-var scegliParita = prompt('scegli pari o dispari');
-var scegliUnNumero = parseInt(prompt('scegli un numero da 1 a 5'));
+var scommessaUtente = prompt('pari o dispari?');
+var numeroUtente = parseInt(prompt('inserisci un numero da 1 a 5'));
+var numeroRandom = generaRandom(1,5);
+var sommaNumeri = somma(numeroUtente, numeroRandom);
+var risultato = pariDispari(sommaNumeri);
 
-
-if (scegliUnNumero % 2 ==0) {
-    console.log('numero pari');
+if (risultato === scommessaUtente.toLowercase()) {
+    console.log('you win!');
 } else {
-    console.log('numero dispari');
+    console.log('you lose!');
 }
-console.log(scegliUnNumero);
 
-var numero = generaRandomMinMax(1, 5);
+function pariDispari (val){
+    if (val % 2 === 0) {
+        return 'pari';
+    }
+    return 'dispari';
+}
 
-if ((numero + scegliUnNumero) % 2 ==0) {
-    if (scegliParita = 'pari') {
-        console.log('hai vinto');
-    } else if (scegliParita = 'dispari'){
-        console.log('hai perso');
-    }
+function somma(valUno, valDue) {
+    return valUno + valDue;
 }
-if ((numero + scegliUnNumero) % 2 ==1) {
-    if (scegliParita = 'pari') {
-        console.log('hai perso');
-    } else if (scegliParita = 'dispari'){
-        console.log('hai vinto');
-    }
-}
-function generaRandomMinMax(min, max) {
-    var numeroRandom = Math.floor(Math.random() * (max - min + 1)) + min;
+
+function generaRandom(min, max) {
+    numeroRandom = Math.floor(Math.random() * (max - min + 1)) + min;
     return numeroRandom;
 }
